@@ -6,20 +6,20 @@ import TeamForm from './TeamForm'
 function App() {
   const [team, setTeam] = useState([
     {
-      id: 1,
-      name: 'Clancy McDougal',
+      id: Date.now(),
+      name: 'John Doe',
       role: 'Web Dev',
-      favoriteColor: 'Red'
+      email: 'jdoe@me.me'
     }
   ]);
 
   const addMemberHandler = (newMember) => {
     setTeam([...team, newMember])
   }
-  
+
   return (
-    <div>
-      <h1>My Team Members</h1>
+    <div className='page'>
+      <h1 className='title'>My Team Members</h1>
       <TeamForm addMember={addMemberHandler} />
       <Team team={team} />
     </div>

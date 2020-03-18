@@ -4,7 +4,7 @@ const TeamForm = props => {
     const [formState, setFormState] = useState({
         name: '',
         role: '',
-        favoriteColor: ''
+        email: ''
     })
 
     const changeHandler = event => {
@@ -22,14 +22,14 @@ const TeamForm = props => {
         setFormState({
             name: '',
             role: '',
-            favoriteColor: ''
+            email: ''
         })
         
     }
 
     return (
         <form onSubmit={formSubmitHandler}>
-            <label htmlFor='name'>Name:</label>
+            <label htmlFor='name'>Name: </label>
             <input
                 type='text'
                 name='name'
@@ -37,7 +37,7 @@ const TeamForm = props => {
                 onChange={changeHandler}
                 placeholder='Enter member name'
             />
-            <label htmlFor='role'>Role:</label>
+            <label htmlFor='role'>Role: </label>
             <input
                 type='text'
                 name='role'
@@ -45,15 +45,15 @@ const TeamForm = props => {
                 onChange={changeHandler}
                 placeholder='Enter member role'
             />
-            <label htmlFor='favorite-color'>Favorite Color:</label>
+            <label htmlFor='email'>Email: </label>
             <input
                 type='text'
-                name='favoriteColor'
-                value={formState.favoriteColor}
+                name='email'
+                value={formState.email}
                 onChange={changeHandler}
                 placeholder='Enter member favorite color'
             />
-            <button type='submit'>Add Team Member!</button>
+            <button className='add' type='submit'>Add Team Member!</button>
         </form>
     )
 }
